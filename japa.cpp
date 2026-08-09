@@ -52,10 +52,11 @@ void func(std::string linha,std::string palavra){
         linha.erase(0,i+1);
         if(palavra=="Mamacita"){
             std::cout<<inteiros[linha]<<"\n";
+        }else{
+            std::cout<<palavra<<" "<<linha<<"\n";
         }
     }
 }
-
 
 
 int main(int argc,char* argv[]){
