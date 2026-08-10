@@ -64,11 +64,12 @@ void func(std::string linha,std::string palavra){
     }else if(palavra=="mostrar"){
         int i = linha.find(' ');
         std::string palavra = linha.substr(0,i);
-        linha.erase(0,i+1);
+        std::string linhas = linha;
+        linhas.erase(0,i+1);
         if(palavra=="Mamacita"){
-            std::cout<<inteiros[linha]<<"\n";
+            std::cout<<inteiros[linhas]<<"\n";
         }else{
-            std::cout<<palavra<<" "<<linha<<"\n";
+            std::cout<<linha<<"\n";
         }
     }
 }
