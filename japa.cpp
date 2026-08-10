@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <unordered_map>
-
+#include <ranges>
 std::unordered_map<std::string,int> inteiros{
 
 };
@@ -13,30 +13,45 @@ bool acha (char a, std::string st){
     }
     return false;
 }
+int numero( std::string linha){
+    try{
+        int i = std::stoi(linha);
+        return i;
+    }catch(...){
+        int i = linha.find("Mamacita");
+        if(i!=std::string::npos){
+            std::string palavra=linha.substr(i+8);
+            std::string retorno ="";
+            for(char c : palavra){if(c!=' '){retorno+=c;}}
+            return inteiros[retorno];
+        }
+    }
+    return 0;
+}
 
 int operacoes(std::string linha){
     if(acha('+',linha)){
         int i = linha.find('+');
-        int Primeiro= std::stoi(linha.substr(0,i));
-        int Segundo= std::stoi(linha.substr(i+1,linha.length()-1));
+        int Primeiro= numero(linha.substr(0,i));
+        int Segundo= numero(linha.substr(i+1,linha.length()-1));
         return Primeiro+Segundo;
     } else if(acha('-',linha)){
         int i = linha.find('-');
-        int Primeiro= std::stoi(linha.substr(0,i));
-        int Segundo= std::stoi(linha.substr(i+1,linha.length()-1));
+        int Primeiro= numero(linha.substr(0,i));
+        int Segundo= numero(linha.substr(i+1,linha.length()-1));
         return Primeiro-Segundo;
     } else if(acha('*',linha)){
         int i = linha.find('*');
-        int Primeiro= std::stoi(linha.substr(0,i));
-        int Segundo= std::stoi(linha.substr(i+1,linha.length()-1));
+        int Primeiro= numero(linha.substr(0,i));
+        int Segundo= numero(linha.substr(i+1,linha.length()-1));
         return Primeiro*Segundo;
     }else if(acha('/',linha)){
         int i = linha.find('/');
-        int Primeiro= std::stoi(linha.substr(0,i));
-        int Segundo= std::stoi(linha.substr(i+1,linha.length()-1));
+        int Primeiro= numero(linha.substr(0,i));
+        int Segundo= numero(linha.substr(i+1,linha.length()-1));
         return Primeiro / Segundo;
     }else{
-        return std::stoi(linha);
+        return numero(linha);
     }
 }
 
