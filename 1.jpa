@@ -1,5 +1,6 @@
-Mamacita 80 = 60 - 12
-Mamacita 2 = Mamacita 80 - 12
-mostrar Mamacita 2
-mostrar 80
-mostrar hello world
+Paralelepípedo ola = hello
+Paralelepípedo mundo = world
+Paralelepípedo ola_mundo = Paralelepípedo ola + Paralelepípedo mundo 
+Mamacita 7 = 7
+Paralelepípedo ola_mundo7 = Paralelepípedo ola_mundo + Mamacita 7
+mostrar Paralelepípedo ola_mundo7
