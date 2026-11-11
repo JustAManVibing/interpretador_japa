@@ -1,0 +1,4 @@
+C:/Users/marco/c++/interpretador_japa/build/CMakeFiles/japa.dir
+C:/Users/marco/c++/interpretador_japa/build/CMakeFiles/run.dir
+C:/Users/marco/c++/interpretador_japa/build/CMakeFiles/edit_cache.dir
+C:/Users/marco/c++/interpretador_japa/build/CMakeFiles/rebuild_cache.dir
